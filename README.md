@@ -30,5 +30,5 @@ If you see a message like this:
  
  (The number and following message may change) the file failed, and will NOT be reattempted. You may re-save or other remove and replace the .LIF file and it will then try again.
 
-## FAQ ##
-- Yes, it will also send the `lynx.evt`, `lynx.ppl`, and `lynx.sch` files if they are updated
+## TODO ##
+- Update `lynx.evt`, `lynx.ppl`, and `lynx.sch` files
