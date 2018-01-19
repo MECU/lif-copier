@@ -8,15 +8,17 @@
 - Open a Windows Command Prompt
 - `cd` to the folder location
 - Run the above command, this message means it's all set
-  - `2018/01/18 20:12:52 Got the Key
+  - ```
+     2018/01/18 20:12:52 Got the Key
   
-     2018/01/18 20:12:52 Ready to rock this meet ...`
+     2018/01/18 20:12:52 Ready to rock this meet ...```
 - Successful files copied will output a message: 
-  - `2018/01/18 20:29:08 created/modified file:023-1-01.lif
+  - ```
+     2018/01/18 20:29:08 created/modified file:023-1-01.lif
   
      2018/01/18 20:29:08  ... trying to upload
 
-     2018/01/18 20:29:09  ... upload success`
+     2018/01/18 20:29:09  ... upload success```
 - Hit CTRL-C to end the program.
 
 You may see a message like this:
