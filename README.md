@@ -32,3 +32,9 @@ If you see a message like this:
 
 ## TODO ##
 - Update `lynx.evt`, `lynx.ppl`, and `lynx.sch` files
+
+## Build ##
+- `goreleaser release --snapshot --rm-dist`
+- `mv ./dist/lif-copier_windows_386/lif-copier.exe ./tractrak.exe`
+- `git tag -a v0.1.0 -m "First release"`
+- `git push origin v0.1.0`
