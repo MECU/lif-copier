@@ -32,7 +32,7 @@ func main() {
 			select {
 			case event := <-watcher.Events:
 				if event.Op&fsnotify.Write == fsnotify.Write || event.Op&fsnotify.Create == fsnotify.Create {
-					log.Print("created/modified file:", event.Name)
+					log.Print("created/modified file: ", event.Name)
 					// See if it's a .LIF file or lynx.(evt|ppl|sch)
 					fileExtension := event.Name[len(event.Name)-3:]
 					if strings.ToUpper(fileExtension) == "LIF" ||
