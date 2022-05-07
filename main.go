@@ -7,9 +7,12 @@ import (
 	"strings"
 )
 
+const url = "https://tractrak.com/api/meet-file"
+const key = "./tractrak.key"
+
 func main() {
 	// Load the key
-	key, err := ioutil.ReadFile("./tractrak.key")
+	key, err := ioutil.ReadFile(key)
 	if err != nil {
 		panic(err)
 	}
@@ -30,12 +33,14 @@ func main() {
 			case event := <-watcher.Events:
 				if event.Op&fsnotify.Write == fsnotify.Write || event.Op&fsnotify.Create == fsnotify.Create {
 					log.Print("created/modified file:", event.Name)
-					// See if it's a .LIF file
-					// TODO: lynx.sch, .ppl, evt
+					// See if it's a .LIF file or lynx.(evt|ppl|sch)
 					fileExtension := event.Name[len(event.Name)-3:]
-					if strings.ToUpper(fileExtension) == "LIF" {
-						log.Print(" ... trying to upload")
-						err = Upload("https://tractrak.com/api/meet-file", event.Name, key)
+					if strings.ToUpper(fileExtension) == "LIF" ||
+						event.Name == "lynx.evt" ||
+						event.Name == "lynx.ppl" ||
+						event.Name == "lynx.sch" {
+						log.Print(" ... trying to upload: " + event.name)
+						err = Upload(url, event.Name, key)
 						if err != nil {
 							log.Println(" ... upload failed: ", err)
 						} else {
