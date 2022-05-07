@@ -30,9 +30,6 @@ If you see a message like this:
  
  (The number and following message may change) the file failed, and will NOT be reattempted. You may re-save or other remove and replace the .LIF file and it will then try again.
 
-## TODO ##
-- Update `lynx.evt`, `lynx.ppl`, and `lynx.sch` files
-
 ## Build ##
 - `goreleaser release --snapshot --rm-dist`
 - `mv ./dist/lif-copier_windows_386/lif-copier.exe ./tractrak.exe`
