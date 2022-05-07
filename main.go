@@ -39,7 +39,7 @@ func main() {
 						event.Name == "lynx.evt" ||
 						event.Name == "lynx.ppl" ||
 						event.Name == "lynx.sch" {
-						log.Print(" ... trying to upload: " + event.name)
+						log.Print(" ... trying to upload: " + event.Name)
 						err = Upload(url, event.Name, key)
 						if err != nil {
 							log.Println(" ... upload failed: ", err)
