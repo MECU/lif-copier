@@ -7,10 +7,12 @@ import (
 	"strings"
 )
 
+const version = "2.2.0"
 const url = "https://tractrak.com/api/meet-file"
 const key = "./tractrak.key"
 
 func main() {
+	log.Println("version: " + version)
 	// Load the key
 	key, err := ioutil.ReadFile(key)
 	if err != nil {
